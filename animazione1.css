@@ -1,0 +1,121 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darkblue;
+}
+
+body h1{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-shadow: 1px 1px 10px blue ;
+    color: rgba(255, 255, 255, 0.726);
+}
+body a{
+    color: rgba(255, 255, 0, 0.849);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    animation-name: animation;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+   
+}
+
+.box:hover{
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    animation-name: hover;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes animation {
+    0% {
+        transform: rotate3d(0,0,1,0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: rotate3d(1,0,1,360deg);
+        opacity: 0.5;
+    }
+
+    60%{
+        transform:rotate3d(0,1,1,280deg);
+        opacity:-1;
+    }
+    100% {
+        transform: rotate3d(1,0,0,0deg);
+        opacity: 0.5;
+    }
+}
+
+@keyframes hover{
+    0% {
+        transform: rotate(360deg);
+        opacity: 0.5;
+        background-color: crimson;
+    }
+
+    50%{
+        transform: rotate(280deg);
+        opacity: 1;
+        background-color: yellow;
+    }
+
+    60%{
+        transform: rotate(0deg);
+        opacity: 0.5;
+        background-color: blueviolet;
+    }
+
+    100%{
+        transform: rotate(0deg);
+        opacity: 1;
+        background-color: black;
+    }
+
+}
+
+
+/* 
+Usare la %
+0% e 100% sono il  progresso dell'animazione
+animations useremo principalmente le transizioni, l'opacità che appare e/o scompare e le rotazioni */
+/* 
+ANIMAZIONI: */
+/* Rotazione -> transform: rotate(0deg);
+per chiudere la rotazione in 100%-> transform: rotate(360deg);
+animation-name: animation;  -> inserire questi tag nella classe a cui vogliamo applicare l'animation, name è il nome dell'animazione.;
+    animation-duration:2s; -> durata dell'animazione;
+    animation-iteration-count: infinite -> quante volte deve effettuare l'animazione;
+    animation-timing-function: linear -> animazione lineare(o anche detta continua);
+    animation-timing-function: ease-in -> piano all'inizio - veloce alla fine;
+    animation-timing-function: ease-out-> veloce all'inizio - piano alla fine;
+    animation-timing-function: ease-in-out -> piano all'inizio - veloce - piano alla fine;
+
+opacity: puoi mettere piu' opacity in ogni progresso dell'animazione;
+
+Trigger: interruttore che fa animare l'oggetto
+un trigger :hover -> permette di far triggerare l'animazione solo quando si passa sopra il cursore
+    */
